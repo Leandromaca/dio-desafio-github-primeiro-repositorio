@@ -1,0 +1,235 @@
+
+
+Primeiro clonar repositório:
+git clone <endereço HTTP/SSH>
+
+Adicionar modificações:
+git add .
+ou
+git add <file>
+
+Fazer Commit:
+git commit -m "<anotação>"
+
+Enviar ao repositório:
+git push
+
+
+
+
+Comandos:
+cd .. <um diretório abaixo>
+cd / <um diretório acima / pode usar tab para autocompletar>
+ls <lista arquivos na pasta>
+git init <cria um novo repositório>
+git add arquivo.txt <adiciona arquivo específico>
+git add meu_diretorio <adiciona diretório específico>
+git add . <adiciona todos os arquivos/repositórios>
+git commit arquivo.txt <commit de arquivo específico>
+git commit -m "comentario" <fazer commit com comentário>
+git status <verifica status dos arquivos na pasta em relação ao github>
+git rm arquivo.txt <remove arquivo específico>
+git rm -r meu_diretorio <remove diretório específico>
+git remote add origin <vincular repositório local com repositório remoto>
+git remote -v <exibe repositório remoto>
+git push
+git push origin master <enviar arquivos/diretórios para o repositório remoto / primeiro push>
+
+
+
+Histórico
+
+
+Windows 7 Pro@HP MINGW64 ~/Documents/LMC/TI/DIO/Desafios/Git01
+$ git clone git@github.com:Leandromaca/dio-desafio-github-primeiro-repositorio.git
+Cloning into 'dio-desafio-github-primeiro-repositorio'...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (6/6), done.
+
+Windows 7 Pro@HP MINGW64 ~/Documents/LMC/TI/DIO/Desafios/Git01
+$ cd dio-desafio-github-primeiro-repositorio/
+
+Windows 7 Pro@HP MINGW64 ~/Documents/LMC/TI/DIO/Desafios/Git01/dio-desafio-github-primeiro-repositorio (main)
+$ ls
+README.md
+
+Windows 7 Pro@HP MINGW64 ~/Documents/LMC/TI/DIO/Desafios/Git01/dio-desafio-github-primeiro-repositorio (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+Windows 7 Pro@HP MINGW64 ~/Documents/LMC/TI/DIO/Desafios/Git01/dio-desafio-github-primeiro-repositorio (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Introducao ao Git e ao GitHub/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Windows 7 Pro@HP MINGW64 ~/Documents/LMC/TI/DIO/Desafios/Git01/dio-desafio-github-primeiro-repositorio (main)
+$ git add .
+
+Windows 7 Pro@HP MINGW64 ~/Documents/LMC/TI/DIO/Desafios/Git01/dio-desafio-github-primeiro-repositorio (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   "Introducao ao Git e ao GitHub/Anota\303\247\303\265es.txt"
+
+
+Windows 7 Pro@HP MINGW64 ~/Documents/LMC/TI/DIO/Desafios/Git01/dio-desafio-github-primeiro-repositorio (main)
+$ git commit -m "Inclusão das anotações do curso de Git/GitHub"
+[main 0cda5e9] Inclusão das anotações do curso de Git/GitHub
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 "Introducao ao Git e ao GitHub/Anota\303\247\303\265es.txt"
+
+Windows 7 Pro@HP MINGW64 ~/Documents/LMC/TI/DIO/Desafios/Git01/dio-desafio-github-primeiro-repositorio (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Windows 7 Pro@HP MINGW64 ~/Documents/LMC/TI/DIO/Desafios/Git01/dio-desafio-github-primeiro-repositorio (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 381 bytes | 190.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Leandromaca/dio-desafio-github-primeiro-repositorio.git
+   bdb2cfd..0cda5e9  main -> main
+
+
+
+
+
+
+
+
+# Resumo Git <https://gist.github.com/davidalves1/2f7cb1e58197ba6da0436512f508b21a>
+
+Inicializando
+Visualizar modificações
+Adicionando e fazendo commit
+Trabalhando com remoto
+Desfazendo coisas
+Alterando configurações
+
+Inicializando
+Inicializar um repositório git:
+$ git init
+
+Visualizar modificações
+Visualizar os arquivos que foram modificados:
+$ git status
+
+Visualizar as modifições realizadas:
+$ git diff [--name-only]
+
+Visualizar lista dos commits já realizados:
+$ git log [--stat] [--graph] [--author="Autor"] [--decorate]
+
+Visualizar árvore de branchs e commits:
+$ git log --graph --pretty=oneline --abbrev-commit
+
+Visualizar log resumido dos commits, mostrando quantidade de commits e quais foram os commits:
+$ git shortlog [-sn]
+
+Visualizar detalhes de um commit:
+$ git show hash_do_commit
+
+Adicionando e fazendo commit
+Adicionar todos os arquivos modificados para serem enviados no commit:
+$ git add .
+
+Realizar commit com descrição do que foi modificado:
+$ git commit -m "Descrição das modificações"
+
+Realizar commit já adicionando todos os arquivos modificados, que já tenham sido adicionados alguma vez, e enviando a mensagem:
+$ git commit -am "Descrição das modificações"
+
+Trabalhando com remoto
+Adicionar um repositório remoto:
+$ git remote add origin https://github.com/davidalves1/gerador-cnpj.git
+
+Visualizar branchs locais e remotos:
+git branch [--list] [-a]
+
+Enviar as modificações commitadas:
+$ git push origin master
+
+Criar tags para versionamento:
+$ git tag -a 1.0.0 -m "Descrição sobre a versão"
+$ git push origin master --tags
+
+Criar um branch e mudar para ele ao mesmo tempo:
+$ git checkout -b nome_do_branch
+
+Enviar o branch para o repositório remoto
+$ git push origin nome-do-branch
+
+Desfazendo coisas
+Remover arquivo do monitoramento do Git:
+$ git rm --cached arquivo ou $ git rm arquivo #(OBS: CUIDADO, este último comando exclui o arquivo do HD também)
+
+Apagar branch ou tag remotos:
+
+$ git tag -d 1.0.0 ou $ git branch -d iss42
+$ git push origin :1.0.0 ou $ git push origin :iss42
+
+Remover remoto:
+$ git remote -v | Para verificar os remotos existentes
+$ git remote rm nome_do_remoto
+
+Desfazer mudanças antes de adicionar o arquivo modificado:
+$ git checkout nome_do_arquivo
+
+Desfazer mudanças após os arquivo ter sido adicionado à fila:
+$ git reset HEAD nome_do_arquivo
+$ git checkout nome_do_arquivo
+
+Desfazer alterações após ter realizado o commit:
+$ git reset [--soft] [--mixed] [--hard] hash_do_commit_anterior_ao_que_se_quer_excluir
+
+Onde:
+
+--soft: apaga o commit mas deixa os arquivos na fila para commitar novamente;
+
+--mixed: apaga o commit e retira os arquivos da fila para serem commitados;
+
+--hard: apaga o commit e as alterações nos arquivos;
+
+Reverter o que foi enviado. Este comando não apaga o commit, ele faz um novo commit desfazendo o que foi feito no commit escolhido. Usado para salvar sua sexta. :)
+
+$ git revert hash_do_commit_a_ser_revertido
+
+Alterando configurações
+Criar um alias para algum comando:
+$ git config --global alias.nome_do_alias comando
+
+# Meus alias pessoais
+$ git config --global alias.cm commit
+$ git config --global alias.ck checkout
+$ git config --global alias.st status
+$ git config --global alias.ps push
+$ git config --global alias.pl pull
+$ git config --global alias.br branch
+Alterar nome e e-mail do usuário:
+$ git config --global user.name "Seu Nome"
+$ git config --global user.email "seu@email.com"
+
+Visualizar todas as configurações
+$ git config --list
